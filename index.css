@@ -45,7 +45,7 @@ a:hover {
 		width: 150vw;
 	}
 
-	body > .photos > .cell > img {
+	body > .photos > .cell > a > img {
 		height: 50vh;
 	}
 }
@@ -55,7 +55,7 @@ a:hover {
 		width: 170vw;
 	}
 
-	body > .photos > .cell > img {
+	body > .photos > .cell > a > img {
 		height: 50vw;
 	}
 }
@@ -65,7 +65,7 @@ body > .photos {
 	line-height: 0;
 }
 
-body > .photos > .cell > img {
+body > .photos > .cell > a > img {
 	opacity: 0.5;
 	transition: 0.3s;
 }
@@ -81,7 +81,7 @@ body > .photos > .cell {
 	line-height: 0px;
 }
 
-body > .photos > .cell > img:hover {
+body > .photos > .cell > a > img:hover {
 	transform: scale(1.2);
 	opacity: 1.0;
 }
@@ -105,4 +105,67 @@ body > .card-details > img {
 body > .card-details > .name {
 	font-size: 8vh;
 	line-height: 7vh;
+}
+
+body > .photo-details {
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom 0;
+}
+
+body > .photo-details > div {
+	display: block;
+	visibility: hidden;
+	z-index: 999;
+	transition: 0.3s;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	text-align: center;
+	opacity: 0;
+	background-color: rgba(0,0,0,0.7);
+}
+
+body > .photo-details > div:target {
+	visibility: visible;
+	display: block;
+	opacity: 1;
+}
+
+body > .photo-details > div > .frame > a::before {
+	content: "×";
+}
+
+body > .photo-details > div > .frame > a {
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 2vh;
+	font-size: 5vh;
+	line-height: 0;
+}
+
+body > .photo-details > div > .frame {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+}
+
+body > .photo-details > div > .frame > img {
+	position: absolute;
+	max-height: 100%;
+	max-width: 100%;
+	width: auto;
+	height: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
 }
